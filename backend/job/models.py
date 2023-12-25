@@ -8,7 +8,7 @@ class Company(models.Model):
     # Autres champs d'entreprise
 
 class JobListing(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.PROTECT, null=True)
     job_title = models.CharField(max_length=100)
     job_description = models.TextField()
     location = models.CharField(max_length=100)
@@ -16,8 +16,8 @@ class JobListing(models.Model):
     # Autres champs d'offre d'emploi
 
 class JobApplication(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    job = models.ForeignKey(JobListing, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL , null=True)
+    job = models.ForeignKey(JobListing, on_delete=models.SET_NULL, null=True)
     cover_letter = models.TextField()
     application_status = models.CharField(max_length=20, choices=[
         ('pending', 'En attente'),

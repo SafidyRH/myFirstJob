@@ -6,4 +6,5 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     biography = models.TextField()
     cv = models.FileField(upload_to='cv/', null=True, blank=True)
-    # Autres champs de profil utilisateur
+    profile_picture = models.ImageField(upload_to='profile_pictures', blank=True)
+

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #add new application
     'job',
-    #'users',
+    'users',
     'userprofile',
     'main',
 ]
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'myFirtsJob.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
